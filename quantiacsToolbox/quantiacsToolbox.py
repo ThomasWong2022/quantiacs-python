@@ -21,11 +21,14 @@ import pickle
 import matplotlib
 import math
 
-matplotlib.use("TkAgg")
-from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
-from matplotlib import style
-import matplotlib.pyplot as plt
-from mpl_toolkits.mplot3d import Axes3D, proj3d
+try:
+    matplotlib.use("TkAgg")
+    from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
+    from matplotlib import style
+    import matplotlib.pyplot as plt
+    from mpl_toolkits.mplot3d import Axes3D, proj3d
+except ImportError:
+    print('Plotting not supported')
 
 import pandas as pd
 import numpy as np
